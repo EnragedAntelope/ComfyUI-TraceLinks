@@ -1,0 +1,18 @@
+[project]
+name = "comfyui-tracelinks"
+description = "Dim or hide node links by data type to trace paths through busy ComfyUI workflows. Frontend-only; works in classic LiteGraph and Nodes 2.0."
+version = "1.0.0"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = []
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/EnragedAntelope/ComfyUI-TraceLinks"
+BugTracker = "https://github.com/EnragedAntelope/ComfyUI-TraceLinks/issues"
+
+[tool.comfy]
+PublisherId = "enragedantelope"
+DisplayName = "TraceLinks"
+Icon = ""

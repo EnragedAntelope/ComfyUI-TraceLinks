@@ -1,0 +1,191 @@
+/* ComfyUI-TraceLinks sidebar styling.
+   Uses ComfyUI theme variables so it matches light and dark themes. */
+
+.tracelinks-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  font-size: 13px;
+  color: var(--fg-color, #ddd);
+  box-sizing: border-box;
+}
+
+.tracelinks-panel .tl-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color, #444);
+}
+
+.tracelinks-panel .tl-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tracelinks-panel .tl-master {
+  cursor: pointer;
+  user-select: none;
+}
+.tracelinks-panel .tl-master-label {
+  font-weight: 600;
+}
+.tracelinks-panel .tl-hotkey {
+  margin-left: auto;
+  font-size: 11px;
+  opacity: 0.6;
+  border: 1px solid var(--border-color, #555);
+  border-radius: 4px;
+  padding: 0 5px;
+  line-height: 16px;
+}
+
+.tracelinks-panel .tl-seg {
+  display: flex;
+  gap: 0;
+}
+.tracelinks-panel .tl-seg-btn {
+  flex: 1;
+  padding: 4px 8px;
+  background: var(--comfy-input-bg, #222);
+  color: var(--fg-color, #ddd);
+  border: 1px solid var(--border-color, #555);
+  cursor: pointer;
+}
+.tracelinks-panel .tl-seg-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.tracelinks-panel .tl-seg-btn:last-child {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+}
+.tracelinks-panel .tl-seg-btn.tl-active {
+  background: var(--p-primary-color, #3b82f6);
+  color: #fff;
+  border-color: var(--p-primary-color, #3b82f6);
+}
+
+.tracelinks-panel .tl-dim-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tracelinks-panel .tl-dim-row.tl-disabled {
+  opacity: 0.4;
+}
+.tracelinks-panel .tl-dim-label {
+  font-size: 11px;
+  opacity: 0.75;
+  min-width: 38px;
+}
+.tracelinks-panel .tl-slider {
+  flex: 1;
+}
+
+.tracelinks-panel .tl-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.tracelinks-panel .tl-btn {
+  padding: 3px 9px;
+  background: var(--comfy-input-bg, #222);
+  color: var(--fg-color, #ddd);
+  border: 1px solid var(--border-color, #555);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.tracelinks-panel .tl-btn:hover {
+  border-color: var(--p-primary-color, #3b82f6);
+}
+.tracelinks-panel .tl-refresh {
+  margin-left: auto;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.tracelinks-panel .tl-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+
+.tracelinks-panel .tl-type {
+  padding: 3px 4px;
+  border-radius: 4px;
+}
+.tracelinks-panel .tl-type:hover {
+  background: var(--comfy-menu-bg, rgba(255, 255, 255, 0.05));
+}
+.tracelinks-panel .tl-type.tl-off .tl-type-name {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+.tracelinks-panel .tl-type.tl-soloed {
+  background: color-mix(in srgb, var(--p-primary-color, #3b82f6) 22%, transparent);
+}
+
+.tracelinks-panel .tl-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.tracelinks-panel .tl-type-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+}
+
+.tracelinks-panel .tl-eye {
+  background: none;
+  border: none;
+  color: var(--fg-color, #ddd);
+  cursor: pointer;
+  font-size: 12px;
+  width: 20px;
+  opacity: 0.85;
+}
+.tracelinks-panel .tl-eye:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.tracelinks-panel .tl-solo {
+  padding: 1px 7px;
+  font-size: 11px;
+  background: var(--comfy-input-bg, #222);
+  color: var(--fg-color, #ddd);
+  border: 1px solid var(--border-color, #555);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.tracelinks-panel .tl-solo.tl-active {
+  background: var(--p-primary-color, #3b82f6);
+  color: #fff;
+  border-color: var(--p-primary-color, #3b82f6);
+}
+
+.tracelinks-panel .tl-empty {
+  opacity: 0.6;
+  font-size: 12px;
+  padding: 10px 4px;
+  line-height: 1.4;
+}
+
+.tracelinks-panel .tl-foot {
+  margin-top: 4px;
+  font-size: 11px;
+  opacity: 0.5;
+  line-height: 1.4;
+}

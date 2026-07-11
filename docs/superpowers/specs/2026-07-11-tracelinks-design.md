@@ -160,6 +160,15 @@ user clicks in sidebar
 4. **Regression sanity:** confirm save/load of the workflow JSON is byte-identical
    before/after toggling (proves R7).
 
+## README requirements
+
+The README must, in addition to install/usage prose:
+- Show the **sidebar tab** (with its icon) and how to open it, so users can find the
+  controls — an annotated screenshot of the panel.
+- State the **Alt+T** master toggle hotkey explicitly, and note it is rebindable in
+  ComfyUI's Settings → Keybindings.
+- Include before/after screenshots (all links vs. a soloed type) captured live.
+
 ## Publishing
 
 - `pyproject.toml` per comfyui-node-dev + Registry schema; README and pyproject kept in
@@ -170,4 +179,6 @@ user clicks in sidebar
 
 ## Open questions
 
-None blocking. Default hotkey `Alt+T` is a proposal; easily changed.
+None blocking. Default hotkey **`Alt+T`** verified conflict-free against the frontend's
+`CORE_KEYBINDINGS` (`src/platform/keybindings/defaults.ts`) — no core binding uses
+`Alt+T` or a bare `t`. Rebindable by the user in Settings → Keybindings.
