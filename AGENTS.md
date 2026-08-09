@@ -2,6 +2,16 @@
 
 A pure viewing aid for ComfyUI that lets you dim or hide node links by their data type, so you can trace a single path (just `IMAGE` links, or just `MODEL`) through a busy workflow. Never changes the graph, links, execution, or saved workflow — only changes how links are drawn on screen. Zero Python dependencies. Works in both classic LiteGraph and Nodes 2.0 (Vue) render modes.
 
+## Current state
+
+_Last verified: 2026-08-08_
+
+- **Status:** feature-complete at v1.0.0 (`pyproject.toml`) and shipped to `main`, but **not published to the Comfy Registry** — installation today is a manual clone into `custom_nodes/`.
+- **Works:** per-type link scanning and toggles in a left sidebar tab; solo to isolate one type; dim (adjustable ghost strength) or hide; the Alt+T master hotkey, registered as a rebindable command and checked for conflicts against core keybindings; settings persisted locally and never written into the workflow. Verified live in both classic LiteGraph and Nodes 2.0 render modes, with `serialize()` byte-identical before and after toggling.
+- **In progress:** nothing in the code — the outstanding work is publication, not implementation.
+- **Known gaps / next steps:** (1) the `[tool.comfy] PublisherId` in `pyproject.toml` is a **guess** and must be confirmed against the real registry publisher id before publishing — `(unknown — confirm before relying on this)`; (2) the Registry publish itself needs the maintainer's Registry API key and has not been run; (3) there are no automated tests — every change needs manual QA in both render modes; (4) it hooks `LGraphCanvas.prototype.renderLink`, a single seam that both render modes still share, so a future frontend that stops painting links on the LiteGraph canvas would break it silently.
+- **Deep docs:** `docs/superpowers/specs/2026-07-11-tracelinks-design.md` (design spec).
+
 ## Architecture in 60 seconds
 
 - **Frontend-only.** The Python side (`__init__.py`) is a minimal ComfyUI custom-node entry point. All logic lives in `web/tracelinks.js` + `tracelinks.css`.
